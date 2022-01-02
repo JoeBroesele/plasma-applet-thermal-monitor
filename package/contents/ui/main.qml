@@ -190,6 +190,10 @@ Item {
 
         temperatureModel.clear()
 
+        if (!systemmonitorAvailableSources) {
+            systemmonitorAvailableSources = []
+        }
+
         if (!systemmonitorSourcesToAdd) {
             systemmonitorSourcesToAdd = []
         }
@@ -277,13 +281,13 @@ Item {
 
             dbgprint('adding source to systemmonitorDS: ' + source)
 
-            if (getSystemmonitorAvailableSources().indexOf(source) > -1) {
+            //if (getSystemmonitorAvailableSources().indexOf(source) > -1) {
                 dbgprint('adding to connected')
                 addToSourcesOfDatasource(systemmonitorDS, source)
-            } else {
-                dbgprint('adding to sta')
-                systemmonitorSourcesToAdd.push(source)
-            }
+            //} else {
+            //    dbgprint('adding to sta')
+            //    systemmonitorSourcesToAdd.push(source)
+            //}
 
         }
 
